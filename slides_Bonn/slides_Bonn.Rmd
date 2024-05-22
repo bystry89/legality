@@ -30,9 +30,9 @@ class: title-slide-custom
 .bottom[
 .title-author[**Piotr Bystranowski**]
 
-.title-author[Max Planck Institute for Research on Collective Goods <br />Interdisciplinary Centre for Ethics, Jagiellonian University] <br /><br />
+.title-author[Max Planck Institute for Research on Collective Goods <br />] <br /><br /><br>
 
-.title-bottom[Bonn<br />February 19th, 2024]]
+.title-bottom[Bonn<br />May 22nd, 2024]]
 
 
 ---
@@ -117,38 +117,36 @@ class: inverse, middle, center
 ---
 .left-column[<div class="big">Case law</div>]
 .right-column[
-<br>
-<table style="border-collapse: collapse; width: 100%; font-size: small; border: 1px solid #CCCCCC;">
-    <thead>
-        <tr style="background-color: #F9F9F9;">
-            <th style="padding: 8px; border: 1px solid #CCCCCC;">Malum Prohibitum</th>
-            <th style="padding: 8px; border: 1px solid #CCCCCC;">Malum in Se</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="padding: 8px; border: 1px solid #CCCCCC;">
-                <p>Some musicians use samples from other musicians' recordings.</p>
-                <p>Sampling is the reuse of a portion of a sound recording in another recording.</p>
-                <p>Sampling is often considered a breach of the copyrights of the original recording.</p>
-                <p>It is not always clear <u>when sampling is protected by the fair use doctrine</u>, which would mean that the artist doesn't need to get permission from the copyright owner.</p>
-                <p>In a <u>recent ruling</u>, the Supreme Court of Figuria decided the following:</p>
-            </td>
-            <td style="padding: 8px; border: 1px solid #CCCCCC;">
-                <p>A frequent cause of neighborhood disputes is <u>noise, especially during nighttime hours</u>.</p>
-                <p>In a <u>recent ruling</u>, the Supreme Court of Figuria decided the following:</p>
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 8px; border: 1px solid #CCCCCC;"><b>[Rule:]</b> "Whenever the sampling artist uses more than 10% of the original recording, they need to acquire permission of the copyright owner."</td>
-            <td style="padding: 8px; border: 1px solid #CCCCCC;"><b>[Rule:]</b> "In multi-unit residential buildings, playing music between the hours of 10 p.m. and 6 a.m. is prohibited."</td>
-        </tr>
-        <tr>
-            <td style="padding: 8px; border: 1px solid #CCCCCC;"><b>[Standard:]</b> "Whenever the sampling artist uses a non-negligible portion of the original recording, they need to acquire permission of the copyright owner."</td>
-            <td style="padding: 8px; border: 1px solid #CCCCCC;"><b>[Standard:]</b> "In multi-unit residential buildings, producing unreasonable noise between the hours of 10 p.m. and 6 a.m. is prohibited."</td>
-        </tr>
-    </tbody>
-</table>
+```{r s1Sample, eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+
+library(tidyverse)
+library(kableExtra)
+
+# Create a data frame to represent the table's content
+legal_standards <- data.frame(
+  #Aspect = c("Description", "Rule", "Standard", "Description", "Rule", "Standard"),
+  `Malum prohibitum` = c(
+    "Some musicians use samples from other musicians' recordings. Sampling is the reuse of a portion of a sound recording in another recording. Sampling is often considered a breach of the copyrights of the original recording. It is not always clear when sampling is protected by the fair use doctrine, which would mean that the artist doesn't need to get permission from the copyright owner. In a recent ruling, the Supreme Court of Figuria decided the following:",
+    "Whenever the sampling artist uses more than 10% of the original recording, they need to acquire permission of the copyright owner.",
+    "Whenever the sampling artist uses a non-negligible portion of the original recording, they need to acquire permission of the copyright owner.",
+    "Ambrose is a young musician, self-producing his music. He has heard about/doesn't know* the new rule. In his recent recording, which is currently trending on TikTok, Ambrose reused about 30% of a song by the acclaimed German electroband, Kraftwerk, without acquiring permission."),
+  `Malum in se` = c(
+    "A frequent cause of neighborhood disputes is noise, especially during nighttime hours. In a recent ruling, the Supreme Court of Figuria decided the following:",
+    "In multi-unit residential buildings, playing music between the hours of 10 p.m. and 6 a.m. is prohibited.",
+    "In multi-unit residential buildings, producing unreasonable noise between the hours of 10 p.m. and 6 a.m. is prohibited.",
+    "Ambrose has heard about/doesn't know* the new rule. One Saturday evening, Ambrose held a rehearsal of his rock band at his apartment from 9pm to 10:30pm, and the resulting noise was audible to his neighbors."
+  ))
+
+# Use kable and kableExtra to format the PDF table
+knitr::kable(legal_standards, "html", booktabs = T, longtable = T) %>%
+  kable_styling(font_size = 12) %>%
+  column_spec(c(1,2), width = "8cm") %>%
+  pack_rows("Rule",2,2) %>% 
+  pack_rows("Standard",3,3) %>% 
+  pack_rows("Vignette (only Part 2)",4,4) %>% 
+  row_spec(c(2,3), italic = T) %>% 
+  footnote(symbol="Randomly varied between subjects.")
+```
 ]
 
 
@@ -191,7 +189,7 @@ class: inverse, middle, center
 .right-column[
 ```{r fig1, fig.height=5.5}
 
-source("plot_2.R")
+source("src/10_plot1.R")
 plot
 ```
 ]
@@ -228,38 +226,47 @@ lavaanPlot(model = fit, coefs=T, stars = c("regress"))
 ---
 
 ```{r fig.height=6.5}
-source("plot_1.R")
+source("src/11_plot2.R")
 fig
 ```
 
 ---
 
-<div style="position:absolute; top:5%; left:5%; width:45%"> 
-<img src="repri1.png" alt="Description" style="width:100%;">
-</div>
-
-<div style="position:absolute; top:25%; right:5%; width:45%"> 
-<img src="wrong1.png" alt="Description" style="width:100%;">
-</div>
-
-<div style="position:absolute; bottom:25%; left:5%; width:45%"> 
-<img src="viol1.png" alt="Description" style="width:100%;">
-</div>
-
-<div style="position:absolute; bottom:5%; right:5%; width:45%"> 
-<img src="person1.png" alt="Description" style="width:100%;">
-</div>
----
-
-
-.anova[![](m4.png)]
-
-.right-column[
-```{r fig.height=3.5}
+```{r models1, echo=F, message=F, warning=F}
 source("src/11_analysis.R")
-interactions::interact_plot(m2, lawlike, Ignorance, mod2 = "stand")
+
+tribble(~term, ~B, ~t, ~p, ~B, ~t, ~p,
+        "Intercept", round(jtools::summ(m1_wrong)$coeftable[1],2),round(jtools::summ(m1_wrong)$coeftable[5],2), "<.001", round(jtools::summ(m2_wrong)$coeftable[1],2),round(jtools::summ(m2_wrong)$coeftable[9],2), "<.001",
+        "Ignorance", round(jtools::summ(m1_wrong)$coeftable[2],2),round(jtools::summ(m1_wrong)$coeftable[6],2), "<.001", round(jtools::summ(m2_wrong)$coeftable[3],2),round(jtools::summ(m2_wrong)$coeftable[11],2), "<.001",
+        "Lawlike", NA,NA,NA, round(jtools::summ(m2_wrong)$coeftable[2],2),round(jtools::summ(m2_wrong)$coeftable[10],2), "<.001",
+        "Ignorance x Lawlike", NA,NA,NA, round(jtools::summ(m2_wrong)$coeftable[4],2),round(jtools::summ(m2_wrong)$coeftable[12],2), "<.001",
+#now the same for repri
+        "Intercept", round(jtools::summ(m1_repri)$coeftable[1],2),round(jtools::summ(m1_repri)$coeftable[5],2), "<.001", round(jtools::summ(m2_repri)$coeftable[1],2),round(jtools::summ(m2_repri)$coeftable[9],2), "<.001",
+        "Ignorance", round(jtools::summ(m1_repri)$coeftable[2],2),round(jtools::summ(m1_repri)$coeftable[6],2), "<.001", round(jtools::summ(m2_repri)$coeftable[3],2),round(jtools::summ(m2_repri)$coeftable[11],2), "<.001",
+        "Lawlike", NA,NA,NA, round(jtools::summ(m2_repri)$coeftable[2],2),round(jtools::summ(m2_repri)$coeftable[10],2), "<.001",
+        "Ignorance x Lawlike", NA,NA,NA, round(jtools::summ(m2_repri)$coeftable[4],2),round(jtools::summ(m2_repri)$coeftable[12],2), "<.001",
+# viol
+        "Intercept", round(jtools::summ(m1_viol)$coeftable[1],2),round(jtools::summ(m1_viol)$coeftable[5],2), "<.001", round(jtools::summ(m2_viol)$coeftable[1],2),round(jtools::summ(m2_viol)$coeftable[9],2), "<.001",
+        "Ignorance", round(jtools::summ(m1_viol)$coeftable[2],2),round(jtools::summ(m1_viol)$coeftable[6],2), "<.001", round(jtools::summ(m2_viol)$coeftable[3],2),round(jtools::summ(m2_viol)$coeftable[11],2), "<.001",
+        "Lawlike", NA,NA,NA, round(jtools::summ(m2_viol)$coeftable[2],2),round(jtools::summ(m2_viol)$coeftable[10],2), "<.001",
+        "Ignorance x Lawlike", NA,NA,NA, round(jtools::summ(m2_viol)$coeftable[4],2),round(jtools::summ(m2_viol)$coeftable[12],2), "<.001",
+# person
+        "Intercept", round(jtools::summ(m1_person)$coeftable[1],2),round(jtools::summ(m1_person)$coeftable[5],2), "<.001", round(jtools::summ(m2_person)$coeftable[1],2),round(jtools::summ(m2_person)$coeftable[9],2), "<.001",
+        "Ignorance", round(jtools::summ(m1_person)$coeftable[2],2),round(jtools::summ(m1_person)$coeftable[6],2), "<.001", round(jtools::summ(m2_person)$coeftable[3],2),round(jtools::summ(m2_person)$coeftable[11],2), "<.001",
+        "Lawlike", NA, NA, NA, round(jtools::summ(m2_person)$coeftable[2],2),round(jtools::summ(m2_person)$coeftable[10],2), as.character(round(jtools::summ(m2_person)$coeftable[18],3)),
+        "Ignorance x Lawlike", NA, NA, NA, round(jtools::summ(m2_person)$coeftable[4],2),round(jtools::summ(m2_person)$coeftable[12],2), as.character(round(jtools::summ(m2_person)$coeftable[20],2))
+) %>% 
+  kable("html", booktabs = T) %>% 
+  kable_styling(font_size = 12) %>% 
+  add_header_above(c(" ", "Model 1" = 3, "Model 2" = 3)) %>%
+  pack_rows("Act's wrongness", 1, 4) %>%
+  pack_rows("Agent's desert", 5, 8) %>%
+  pack_rows("Rule violation", 9, 12) %>%
+  pack_rows("Agent is a good person", 13, 16) %>%
+  column_spec(1, width = "5cm") %>% 
+  column_spec(2:7, width = "2cm")
+
 ```
-]
 
 ---
 
@@ -267,7 +274,7 @@ interactions::interact_plot(m2, lawlike, Ignorance, mod2 = "stand")
 
 .right-column[<br><br>
 .list1[
-- Hart, *CoL*, Ch. V:
+- Hart, *CoL*, Ch. VI:
 .list2[
 - non-legal social rules are contingent on general acceptance of people they are addressed to (PB: *acceptance* implies *awareness*);
 - legal (primary) rules are contingent *only* on the rule of recognition, as practiced by legal officials, and on the general efficacy of the legal system *as a whole*.
@@ -314,62 +321,36 @@ class: inverse, middle, center
 ]
 
 ---
+
 .left-column[<div class="big">Stimuli</div>]
 
 
-.right-column[<br><br>
-<table style="border-collapse: collapse; width: 100%; font-size: small; border: 1px solid #CCCCCC;">
-    <tbody>
-        <tr>
-            <td style="padding: 8px; border: 1px solid #CCCCCC;">Min</td>
-            <td style="padding: 8px; border: 1px solid #CCCCCC;">
-                Chris and Alex, a couple actively involved in transgender rights advocacy, prefer not to discuss "Harry Potter" at their gatherings due to J.K. Rowling's controversial statements on transgender issues.
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 8px; border: 1px solid #CCCCCC;">Median</td>
-            <td style="padding: 8px; border: 1px solid #CCCCCC;">
-                At Zenith Corporation, a clear policy is in place regarding the use of the company car park: It is exclusively reserved for clients. Employees are encouraged to use alternative parking arrangements. This policy ensures that clients always have convenient access when visiting the office.
-            </td>
-        </tr>
-        <tr>
-            <td style="padding: 8px; border: 1px solid #CCCCCC;">Max</td>
-            <td style="padding: 8px; border: 1px solid #CCCCCC;">
-                All car owners must insure their vehicles, regardless of usage, unless the vehicles are officially declared as non-operational.
-            </td>
-        </tr>
-    </tbody>
-</table>
+.right-column[
+```{r stim2, echo=F, message=F, warning=F}
+lawlike_means <- read_csv("data/21_lawlike_means.csv")
+tribble(~" ", ~Rule, ~lawlikeness, ~seriousness, ~publicity,
+        "Min", "At Fitness First, a common understanding among members is to respect personal belongings left near gym equipment, indicating that someone is currently using or intending to return to that equipment.", round(lawlike_means[lawlike_means$Rule=="gym_possessions", "lawlike_1"],2), round(lawlike_means[lawlike_means$Rule=="gym_possessions", "serious_1"],2), round(lawlike_means[lawlike_means$Rule=="gym_possessions", "public_1"],2),
+        "1Q", "Green Valley Supermarket encourages a respectful checkout experience, which includes not using phones while packing groceries. This practice shows courtesy to the cashiers and ensures efficient service for everyone.", round(lawlike_means[lawlike_means$Rule=="phone_shopping", "lawlike_1"],2), round(lawlike_means[lawlike_means$Rule=="phone_shopping", "serious_1"],2), round(lawlike_means[lawlike_means$Rule=="phone_shopping", "public_1"],2),
+        "Median", "Vertex Solutions, a digital marketing firm, has a strict policy regarding client communications: Employees must not use generative AI tools to draft emails to clients. This policy ensures that all client communication is personalized, thoughtful, and maintains the company's standard of human touch.", round(lawlike_means[lawlike_means$Rule=="generative_ai", "lawlike_1"],2), round(lawlike_means[lawlike_means$Rule=="generative_ai", "serious_1"],2), round(lawlike_means[lawlike_means$Rule=="generative_ai", "public_1"],2),
+        "3Q", "By law, it is prohibited to engage in gambling in the premises of public libraries. This rule is in place to maintain an environment conducive to reading and studying.", round(lawlike_means[lawlike_means$Rule=="gambling_library", "lawlike_1"],2), round(lawlike_means[lawlike_means$Rule=="gambling_library", "serious_1"],2), round(lawlike_means[lawlike_means$Rule=="gambling_library", "public_1"],2),
+        "Max", "All car owners must insure their vehicles, regardless of usage, unless the vehicles are officially declared as non-operational.", round(lawlike_means[lawlike_means$Rule=="insure_car", "lawlike_1"],2), round(lawlike_means[lawlike_means$Rule=="insure_car", "serious_1"],2), round(lawlike_means[lawlike_means$Rule=="insure_car", "public_1"],2)) %>% 
+  kable("html", booktabs = T, longtable=T ) %>% 
+  kable_styling(font_size=12) %>% 
+  column_spec(2, width = "8cm") 
+```
 ]
 
 ---
 ```{r fig.height=6.5}
+
 library(ggrepel)
 long <- read_csv("data/20_long.csv")
-long %>% group_by(Rule) %>% 
-  summarise(n=n(), lawlike=mean(lawlike), serious=mean(serious)) %>% 
-  ggplot(aes(serious, lawlike, label=Rule))+
-  geom_text_repel(size=3)+geom_smooth(method='lm')
-```
-
----
-```{r fig.height=6.5}
 
 long %>% group_by(Rule) %>% 
   summarise(n=n(), lawlike=mean(lawlike), public=mean(public)) %>% 
-  ggplot(aes(public, lawlike, label=Rule))+
-  geom_text_repel(size=3)+geom_smooth(method='lm')
+  ggplot(aes(lawlike, public, label=Rule))+
+  geom_text_repel(size=3)+geom_smooth(method='lm')+ylim(c(0,100))
 ```
----
-
-.left-column[<div class="big">Religion and<br>lawlikeness</div>]
-
-.right-column[<br><br><br><br><br>
-<img src="religion1.png" style="max-width:85%;">
-]
----
-
-<img src="SDP.png" style="max-width:85%;">
 
 ---
 
@@ -432,6 +413,18 @@ source("src/23_joint.R")
 ]
 
 ---
+
+.left_column[<div class="big">Experimental manipulation<br>and publicity</div>]
+
+.right-column[
+.list1[
+- Experimental condition predicts the ex post publicity measure (*B* = -0.43, *t* = -5.17, *p* < .001)
+- This effect is moderated by lawlikeness (*B* = 0.003, *t* = 3.17, *p* = 0.002)
+
+<img src="Rplot02.png" alt="Description" style="width:40%;">
+
+]]
+---
 class: inverse, middle, center
 
 # Study 3
@@ -477,6 +470,98 @@ read_csv("data/31_long.csv") %>%
 ```
 
 ---
+class: inverse, middle, center
+
+# Study 4
+
+---
+
+.left-column[<div class="big">Study 4]</div>
+
+.right-column[
+.list1[
+- blame updating paradigm
+.list2[
+- successfully applied in the context of intent/factual ignorance (Monroe & Malle, 2019)
+- less successfully applied in the context of moral ignorance (Theisen & Andow, 2024)
+- here applied to all responsibility measures + perceived publicity
+]
+- four experimental conditions:
+.list2[
+- knowledge (*X knew the rule*); 
+- pure ignorance (*X did not know the rule*); 
+- culpable ignorance (*X didn’t know the rule. He usually doesn’t put much effort into learning rules like this one, neither did he this time*); 
+- innocent ignorance (*X didn’t know the rule. He normally puts much effort into learning rules like this one. In this case, he had asked [a friend] about the relevant rules but was given incorrect information*).
+]
+]]
+---
+
+.left-column[<div class="big">H1</div>]
+
+.right-column[
+```{r fig5, echo=F, message=F, warning=F, fig.height=7}
+source("src/41_analysis.R")
+plot6
+```
+]
+
+---
+
+.left-column[<div class="big">H2</div>]
+
+.right-column[
+
+<div style="position:absolute; top:30%; left:5%; width:45%"> 
+<img src="H4.2_desert.png" alt="Description" style="width:100%;">
+</div>
+
+<div style="position:absolute; top:30%; right:5%; width:45%"> 
+<img src="H4.2_wrong.png" alt="Description" style="width:100%;">
+</div>
+
+<div style="position:absolute; bottom:15%; left:5%; width:45%"> 
+<img src="H4.2_viol.png" alt="Description" style="width:100%;">
+</div>
+
+<div style="position:absolute; bottom:15%; right:5%; width:45%"> 
+<img src="H4.2_pub.png" alt="Description" style="width:100%;">
+</div>
+]
+---
+
+.left-column[<div class="big">H3</div>]
+
+.right-column[
+
+<img src="Rplot04.png" alt="Description" style="width:90%;">
+
+]
+---
+
+
+.right-column[
+
+<img src="Rplot05.png" alt="Description" style="width:90%;">
+
+]
+---
+
+.left-column[<div class="big">Conclusion</div>]
+
+.right-column[
+.list1[
+- normative ignorance limits the ascriptions of desert, wrongness, rule violation;
+- this effect is moderated by the perceived lawlikeness of a given rule;
+- the moderation can be explained by the observation that:
+.list2[
+- effect of ignorance on rule violation is moderated by an update of perceived rule's publicity;
+- the update is more conservative for legal rules.
+]
+]
+]
+
+---
+
 class: center, middle
 
 # Thanks!

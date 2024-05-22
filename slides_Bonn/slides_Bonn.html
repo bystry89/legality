@@ -7,6 +7,8 @@
     <script src="libs/header-attrs-2.25/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+    <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
     <script src="libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
     <script src="libs/viz-1.8.2/viz.js"></script>
     <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
@@ -27,9 +29,9 @@ class: title-slide-custom
 .bottom[
 .title-author[**Piotr Bystranowski**]
 
-.title-author[Max Planck Institute for Research on Collective Goods] &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+.title-author[Max Planck Institute for Research on Collective Goods &lt;br /&gt;] &lt;br /&gt;&lt;br /&gt;&lt;br&gt;
 
-.title-bottom[Bonn&lt;br /&gt;February 19th, 2024]]
+.title-bottom[Bonn&lt;br /&gt;May 22nd, 2024]]
 
 
 ---
@@ -114,37 +116,36 @@ class: inverse, middle, center
 ---
 .left-column[&lt;div class="big"&gt;Case law&lt;/div&gt;]
 .right-column[
-&lt;br&gt;
-&lt;table style="border-collapse: collapse; width: 100%; font-size: small; border: 1px solid #CCCCCC;"&gt;
-    &lt;thead&gt;
-        &lt;tr style="background-color: #F9F9F9;"&gt;
-            &lt;th style="padding: 8px; border: 1px solid #CCCCCC;"&gt;Malum Prohibitum&lt;/th&gt;
-            &lt;th style="padding: 8px; border: 1px solid #CCCCCC;"&gt;Malum in Se&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td style="padding: 8px; border: 1px solid #CCCCCC;"&gt;
-                &lt;p&gt;Some musicians use samples from other musicians' recordings.&lt;/p&gt;
-                &lt;p&gt;Sampling is the reuse of a portion of a sound recording in another recording.&lt;/p&gt;
-                &lt;p&gt;Sampling is often considered a breach of the copyrights of the original recording.&lt;/p&gt;
-                &lt;p&gt;It is not always clear &lt;u&gt;when sampling is protected by the fair use doctrine&lt;/u&gt;, which would mean that the artist doesn't need to get permission from the copyright owner.&lt;/p&gt;
-                &lt;p&gt;In a &lt;u&gt;recent ruling&lt;/u&gt;, the Supreme Court of Figuria decided the following:&lt;/p&gt;
-            &lt;/td&gt;
-            &lt;td style="padding: 8px; border: 1px solid #CCCCCC;"&gt;
-                &lt;p&gt;A frequent cause of neighborhood disputes is &lt;u&gt;noise, especially during nighttime hours&lt;/u&gt;.&lt;/p&gt;
-                &lt;p&gt;In a &lt;u&gt;recent ruling&lt;/u&gt;, the Supreme Court of Figuria decided the following:&lt;/p&gt;
-            &lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td style="padding: 8px; border: 1px solid #CCCCCC;"&gt;&lt;b&gt;[Rule:]&lt;/b&gt; "Whenever the sampling artist uses more than 10% of the original recording, they need to acquire permission of the copyright owner."&lt;/td&gt;
-            &lt;td style="padding: 8px; border: 1px solid #CCCCCC;"&gt;&lt;b&gt;[Rule:]&lt;/b&gt; "In multi-unit residential buildings, playing music between the hours of 10 p.m. and 6 a.m. is prohibited."&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td style="padding: 8px; border: 1px solid #CCCCCC;"&gt;&lt;b&gt;[Standard:]&lt;/b&gt; "Whenever the sampling artist uses a non-negligible portion of the original recording, they need to acquire permission of the copyright owner."&lt;/td&gt;
-            &lt;td style="padding: 8px; border: 1px solid #CCCCCC;"&gt;&lt;b&gt;[Standard:]&lt;/b&gt; "In multi-unit residential buildings, producing unreasonable noise between the hours of 10 p.m. and 6 a.m. is prohibited."&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;border-bottom: 0;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Malum.prohibitum &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Malum.in.se &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;width: 8cm; "&gt; Some musicians use samples from other musicians' recordings. Sampling is the reuse of a portion of a sound recording in another recording. Sampling is often considered a breach of the copyrights of the original recording. It is not always clear when sampling is protected by the fair use doctrine, which would mean that the artist doesn't need to get permission from the copyright owner. In a recent ruling, the Supreme Court of Figuria decided the following: &lt;/td&gt;
+   &lt;td style="text-align:left;width: 8cm; "&gt; A frequent cause of neighborhood disputes is noise, especially during nighttime hours. In a recent ruling, the Supreme Court of Figuria decided the following: &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr grouplength="1"&gt;&lt;td colspan="2" style="border-bottom: 1px solid;"&gt;&lt;strong&gt;Rule&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td style="text-align:left;width: 8cm; padding-left: 2em;font-style: italic;" indentlevel="1"&gt; Whenever the sampling artist uses more than 10% of the original recording, they need to acquire permission of the copyright owner. &lt;/td&gt;
+   &lt;td style="text-align:left;width: 8cm; font-style: italic;"&gt; In multi-unit residential buildings, playing music between the hours of 10 p.m. and 6 a.m. is prohibited. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr grouplength="1"&gt;&lt;td colspan="2" style="border-bottom: 1px solid;"&gt;&lt;strong&gt;Standard&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td style="text-align:left;width: 8cm; padding-left: 2em;font-style: italic;" indentlevel="1"&gt; Whenever the sampling artist uses a non-negligible portion of the original recording, they need to acquire permission of the copyright owner. &lt;/td&gt;
+   &lt;td style="text-align:left;width: 8cm; font-style: italic;"&gt; In multi-unit residential buildings, producing unreasonable noise between the hours of 10 p.m. and 6 a.m. is prohibited. &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr grouplength="1"&gt;&lt;td colspan="2" style="border-bottom: 1px solid;"&gt;&lt;strong&gt;Vignette (only Part 2)&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td style="text-align:left;width: 8cm; padding-left: 2em;" indentlevel="1"&gt; Ambrose is a young musician, self-producing his music. He has heard about/doesn't know* the new rule. In his recent recording, which is currently trending on TikTok, Ambrose reused about 30% of a song by the acclaimed German electroband, Kraftwerk, without acquiring permission. &lt;/td&gt;
+   &lt;td style="text-align:left;width: 8cm; "&gt; Ambrose has heard about/doesn't know* the new rule. One Saturday evening, Ambrose held a rehearsal of his rock band at his apartment from 9pm to 10:30pm, and the resulting noise was audible to his neighbors. &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;&lt;tr&gt;&lt;td style="padding: 0; " colspan="100%"&gt;
+&lt;sup&gt;*&lt;/sup&gt; Randomly varied between subjects.&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;
 &lt;/table&gt;
 ]
 
@@ -201,8 +202,8 @@ class: inverse, middle, center
 ---
 
 .right-column[
-<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-861c2ed72996b28de8e3" style="width:504px;height:504px;"></div>
-<script type="application/json" data-for="htmlwidget-861c2ed72996b28de8e3">{"x":{"diagram":" digraph plot { \n graph [ overlap = true, fontsize = 10 ] \n node [ shape = box ] \n node [shape = box] \n serious; Source; inse; lawlike \n node [shape = oval] \n  \n \n edge [ color = black ] \n serious->lawlike [label = \"0.43***\"] Source->lawlike [label = \"0.25***\"] inse->lawlike [label = \"-0.04\"] Source->serious [label = \"0.32***\"] inse->serious [label = \"0.51***\"]  \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-6f0f374bb994369435da" style="width:504px;height:504px;"></div>
+<script type="application/json" data-for="htmlwidget-6f0f374bb994369435da">{"x":{"diagram":" digraph plot { \n graph [ overlap = true, fontsize = 10 ] \n node [ shape = box ] \n node [shape = box] \n serious; Source; inse; lawlike \n node [shape = oval] \n  \n \n edge [ color = black ] \n serious->lawlike [label = \"0.43***\"] Source->lawlike [label = \"0.25***\"] inse->lawlike [label = \"-0.04\"] Source->serious [label = \"0.32***\"] inse->serious [label = \"0.51***\"]  \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ]
 
 ---
@@ -220,29 +221,174 @@ class: inverse, middle, center
 
 ---
 
-&lt;div style="position:absolute; top:5%; left:5%; width:45%"&gt; 
-&lt;img src="repri1.png" alt="Description" style="width:100%;"&gt;
-&lt;/div&gt;
-
-&lt;div style="position:absolute; top:25%; right:5%; width:45%"&gt; 
-&lt;img src="wrong1.png" alt="Description" style="width:100%;"&gt;
-&lt;/div&gt;
-
-&lt;div style="position:absolute; bottom:25%; left:5%; width:45%"&gt; 
-&lt;img src="viol1.png" alt="Description" style="width:100%;"&gt;
-&lt;/div&gt;
-
-&lt;div style="position:absolute; bottom:5%; right:5%; width:45%"&gt; 
-&lt;img src="person1.png" alt="Description" style="width:100%;"&gt;
-&lt;/div&gt;
----
-
-
-.anova[![](m4.png)]
-
-.right-column[
-![](slides_Bonn_files/figure-html/unnamed-chunk-4-1.svg)&lt;!-- --&gt;
-]
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="empty-cells: hide;border-bottom:hidden;" colspan="1"&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Model 1&lt;/div&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Model 2&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; term &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; B &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; t &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; p &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; B &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; t &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; p &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr grouplength="4"&gt;&lt;td colspan="7" style="border-bottom: 1px solid;"&gt;&lt;strong&gt;Act's wrongness&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;width: 5cm; " indentlevel="1"&gt; Intercept &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 59.98 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 11.81 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 60.12 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 10.30 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;width: 5cm; " indentlevel="1"&gt; Ignorance &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; -11.86 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; -7.30 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; -11.82 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; -7.39 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;width: 5cm; " indentlevel="1"&gt; Lawlike &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 28.31 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 8.91 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;width: 5cm; " indentlevel="1"&gt; Ignorance x Lawlike &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 10.37 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 7.55 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr grouplength="4"&gt;&lt;td colspan="7" style="border-bottom: 1px solid;"&gt;&lt;strong&gt;Agent's desert&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;width: 5cm; " indentlevel="1"&gt; Intercept &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 53.58 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 10.61 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 53.68 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 15.74 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;width: 5cm; " indentlevel="1"&gt; Ignorance &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; -13.46 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; -8.08 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; -13.44 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; -8.18 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;width: 5cm; " indentlevel="1"&gt; Lawlike &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 21.96 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 7.70 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;width: 5cm; " indentlevel="1"&gt; Ignorance x Lawlike &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 4.71 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 3.37 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr grouplength="4"&gt;&lt;td colspan="7" style="border-bottom: 1px solid;"&gt;&lt;strong&gt;Rule violation&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;width: 5cm; " indentlevel="1"&gt; Intercept &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 72.02 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 18.93 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 72.08 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 29.21 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;width: 5cm; " indentlevel="1"&gt; Ignorance &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; -7.84 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; -4.58 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; -7.81 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; -4.61 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;width: 5cm; " indentlevel="1"&gt; Lawlike &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 12.76 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 5.37 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;width: 5cm; " indentlevel="1"&gt; Ignorance x Lawlike &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 6.91 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 5.22 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr grouplength="4"&gt;&lt;td colspan="7" style="border-bottom: 1px solid;"&gt;&lt;strong&gt;Agent is a good person&lt;/strong&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;width: 5cm; " indentlevel="1"&gt; Intercept &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 51.67 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 26.95 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 51.63 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 31.57 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;width: 5cm; " indentlevel="1"&gt; Ignorance &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 10.54 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 8.15 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 10.53 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; 8.16 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; &amp;lt;.001 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;width: 5cm; " indentlevel="1"&gt; Lawlike &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; -6.58 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; -4.10 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; 0.002 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;padding-left: 2em;width: 5cm; " indentlevel="1"&gt; Ignorance x Lawlike &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; -0.69 &lt;/td&gt;
+   &lt;td style="text-align:right;width: 2cm; "&gt; -0.73 &lt;/td&gt;
+   &lt;td style="text-align:left;width: 2cm; "&gt; 0.47 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 ---
 
@@ -297,56 +443,70 @@ class: inverse, middle, center
 ]
 
 ---
+
 .left-column[&lt;div class="big"&gt;Stimuli&lt;/div&gt;]
 
 
-.right-column[&lt;br&gt;&lt;br&gt;
-&lt;table style="border-collapse: collapse; width: 100%; font-size: small; border: 1px solid #CCCCCC;"&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td style="padding: 8px; border: 1px solid #CCCCCC;"&gt;Min&lt;/td&gt;
-            &lt;td style="padding: 8px; border: 1px solid #CCCCCC;"&gt;
-                Chris and Alex, a couple actively involved in transgender rights advocacy, prefer not to discuss "Harry Potter" at their gatherings due to J.K. Rowling's controversial statements on transgender issues.
-            &lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td style="padding: 8px; border: 1px solid #CCCCCC;"&gt;Median&lt;/td&gt;
-            &lt;td style="padding: 8px; border: 1px solid #CCCCCC;"&gt;
-                At Zenith Corporation, a clear policy is in place regarding the use of the company car park: It is exclusively reserved for clients. Employees are encouraged to use alternative parking arrangements. This policy ensures that clients always have convenient access when visiting the office.
-            &lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td style="padding: 8px; border: 1px solid #CCCCCC;"&gt;Max&lt;/td&gt;
-            &lt;td style="padding: 8px; border: 1px solid #CCCCCC;"&gt;
-                All car owners must insure their vehicles, regardless of usage, unless the vehicles are officially declared as non-operational.
-            &lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
+.right-column[
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Rule &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; lawlikeness &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; seriousness &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; publicity &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Min &lt;/td&gt;
+   &lt;td style="text-align:left;width: 8cm; "&gt; At Fitness First, a common understanding among members is to respect personal belongings left near gym equipment, indicating that someone is currently using or intending to return to that equipment. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.24 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 20.18 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 63.59 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1Q &lt;/td&gt;
+   &lt;td style="text-align:left;width: 8cm; "&gt; Green Valley Supermarket encourages a respectful checkout experience, which includes not using phones while packing groceries. This practice shows courtesy to the cashiers and ensures efficient service for everyone. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 14.43 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 28.3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 36.61 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Median &lt;/td&gt;
+   &lt;td style="text-align:left;width: 8cm; "&gt; Vertex Solutions, a digital marketing firm, has a strict policy regarding client communications: Employees must not use generative AI tools to draft emails to clients. This policy ensures that all client communication is personalized, thoughtful, and maintains the company's standard of human touch. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 29.56 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 38.83 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 72.89 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3Q &lt;/td&gt;
+   &lt;td style="text-align:left;width: 8cm; "&gt; By law, it is prohibited to engage in gambling in the premises of public libraries. This rule is in place to maintain an environment conducive to reading and studying. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 75.75 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 55.6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 47.75 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Max &lt;/td&gt;
+   &lt;td style="text-align:left;width: 8cm; "&gt; All car owners must insure their vehicles, regardless of usage, unless the vehicles are officially declared as non-operational. &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 95.27 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 88 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 87.68 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
 &lt;/table&gt;
 ]
 
 ---
-![](slides_Bonn_files/figure-html/unnamed-chunk-5-1.svg)&lt;!-- --&gt;
-
----
-![](slides_Bonn_files/figure-html/unnamed-chunk-6-1.svg)&lt;!-- --&gt;
----
-
-.left-column[&lt;div class="big"&gt;Religion and&lt;br&gt;lawlikeness&lt;/div&gt;]
-
-.right-column[&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src="religion1.png" style="max-width:85%;"&gt;
-]
----
-
-&lt;img src="SDP.png" style="max-width:85%;"&gt;
+![](slides_Bonn_files/figure-html/unnamed-chunk-4-1.svg)&lt;!-- --&gt;
 
 ---
 
 .left-column[&lt;div class="big"&gt;Part 2:&lt;br&gt;H1 &amp; H2&lt;/div&gt;]
 
 .right-column[
-![](slides_Bonn_files/figure-html/unnamed-chunk-7-1.svg)&lt;!-- --&gt;
+![](slides_Bonn_files/figure-html/unnamed-chunk-5-1.svg)&lt;!-- --&gt;
 ]
 
 ---
@@ -400,6 +560,18 @@ class: inverse, middle, center
 ]
 
 ---
+
+.left_column[&lt;div class="big"&gt;Experimental manipulation&lt;br&gt;and publicity&lt;/div&gt;]
+
+.right-column[
+.list1[
+- Experimental condition predicts the ex post publicity measure (*B* = -0.43, *t* = -5.17, *p* &lt; .001)
+- This effect is moderated by lawlikeness (*B* = 0.003, *t* = 3.17, *p* = 0.002)
+
+&lt;img src="Rplot02.png" alt="Description" style="width:40%;"&gt;
+
+]]
+---
 class: inverse, middle, center
 
 # Study 3
@@ -435,9 +607,98 @@ class: inverse, middle, center
 
 ---
 
-![](slides_Bonn_files/figure-html/unnamed-chunk-8-1.svg)&lt;!-- --&gt;
+![](slides_Bonn_files/figure-html/unnamed-chunk-6-1.svg)&lt;!-- --&gt;
 
 ---
+class: inverse, middle, center
+
+# Study 4
+
+---
+
+.left-column[&lt;div class="big"&gt;Study 4]&lt;/div&gt;
+
+.right-column[
+.list1[
+- blame updating paradigm
+.list2[
+- successfully applied in the context of intent/factual ignorance (Monroe &amp; Malle, 2019)
+- less successfully applied in the context of moral ignorance (Theisen &amp; Andow, 2024)
+- here applied to all responsibility measures + perceived publicity
+]
+- four experimental conditions:
+.list2[
+- knowledge (*X knew the rule*); 
+- pure ignorance (*X did not know the rule*); 
+- culpable ignorance (*X didn’t know the rule. He usually doesn’t put much effort into learning rules like this one, neither did he this time*); 
+- innocent ignorance (*X didn’t know the rule. He normally puts much effort into learning rules like this one. In this case, he had asked [a friend] about the relevant rules but was given incorrect information*).
+]
+]]
+---
+
+.left-column[&lt;div class="big"&gt;H1&lt;/div&gt;]
+
+.right-column[
+![](slides_Bonn_files/figure-html/fig5-1.svg)&lt;!-- --&gt;
+]
+
+---
+
+.left-column[&lt;div class="big"&gt;H2&lt;/div&gt;]
+
+.right-column[
+
+&lt;div style="position:absolute; top:30%; left:5%; width:45%"&gt; 
+&lt;img src="H4.2_desert.png" alt="Description" style="width:100%;"&gt;
+&lt;/div&gt;
+
+&lt;div style="position:absolute; top:30%; right:5%; width:45%"&gt; 
+&lt;img src="H4.2_wrong.png" alt="Description" style="width:100%;"&gt;
+&lt;/div&gt;
+
+&lt;div style="position:absolute; bottom:15%; left:5%; width:45%"&gt; 
+&lt;img src="H4.2_viol.png" alt="Description" style="width:100%;"&gt;
+&lt;/div&gt;
+
+&lt;div style="position:absolute; bottom:15%; right:5%; width:45%"&gt; 
+&lt;img src="H4.2_pub.png" alt="Description" style="width:100%;"&gt;
+&lt;/div&gt;
+]
+---
+
+.left-column[&lt;div class="big"&gt;H3&lt;/div&gt;]
+
+.right-column[
+
+&lt;img src="Rplot04.png" alt="Description" style="width:90%;"&gt;
+
+]
+---
+
+
+.right-column[
+
+&lt;img src="Rplot05.png" alt="Description" style="width:90%;"&gt;
+
+]
+---
+
+.left-column[&lt;div class="big"&gt;Conclusion&lt;/div&gt;]
+
+.right-column[
+.list1[
+- normative ignorance limits the ascriptions of desert, wrongness, rule violation;
+- this effect is moderated by the perceived lawlikeness of a given rule;
+- the moderation can be explained by the observation that:
+.list2[
+- effect of ignorance on rule violation is moderated by an update of perceived rule's publicity;
+- the update is more conservative for legal rules.
+]
+]
+]
+
+---
+
 class: center, middle
 
 # Thanks!
